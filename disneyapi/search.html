@@ -11,15 +11,61 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
   <style>
-  #body { font-style: normal; background: linear-gradient(to right, #e6e1f5 0%, #e6e1f5 25%, #a09be7 100%); }
-  .card { padding: 30px; text-align: center; }
-  .imgcontainer { background-color: #D9D9D9; border-radius: 20px; }
-  .imgcontainer img { width: 100%; height: 200px; object-fit: cover; border-radius: 20px; }
-  .character-name { font-weight: bold; font-size: 30px; }
-  .btn { background-color: #5a189a !important; color: white !important; border-color: #5a189a !important; }
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      font-style: normal;
+      background: linear-gradient(to right, #e6e1f5 0%, #e6e1f5 25%, #a09be7 100%);
+    }
+
+    .container {
+      max-width: 100%;
+    }
+
+    .card {
+      padding: 20px;
+      text-align: center;
+      max-width: 300px;
+      margin: 10px auto;
+    }
+
+    .imgcontainer {
+      background-color: #D9D9D9;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .imgcontainer img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .character-name {
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .btn {
+      background-color: #5a189a !important;
+      color: white !important;
+      border-color: #5a189a !important;
+    }
+
+    /* Responsive centering */
+    @media (max-width: 768px) {
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+      }
+    }
   </style>
 </head>
-<body id="body">
+
+<body>
   <nav class="navbar" style="background: linear-gradient(to right, #e6e1f5 0%, #e6e1f5 25%, #a09be7 100%);">
     <div class="container-fluid">
       <a class="navbar-brand" href="index.html">
@@ -28,20 +74,18 @@
     </div>
   </nav>
   <div class="container">
-    <div class="row mt-2 align-items-center">
+    <div class="row mt-2 text-center">
       <div class="col fs-1">
         <span style="font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-style: normal; color: #fffafadb;
         text-shadow:0 0 10px #6d249799">Search for Characters</span>
       </div>
-      <div class="col">
-        <div class="row">
-          <div class="col-8">
-            <input class="form-control" type="text" placeholder="Character Name // e.g, Apollo" id="searchTerm">
-          </div>
-          <div class="col-4">
-            <button class="btn btn-primary" type="button" onclick="searchCharacter()">Search</button>
-          </div>
-        </div>
+    </div>
+    <div class="row mt-2 justify-content-center">
+      <div class="col-8 col-md-6 col-lg-4">
+        <input class="form-control" type="text" placeholder="Character Name // e.g., Apollo" id="searchTerm">
+      </div>
+      <div class="col-4 col-md-2 col-lg-1">
+        <button class="btn btn-primary w-100" type="button" onclick="searchCharacter()">Search</button>
       </div>
     </div>
     <div class="row mt-3" id="cardContainer"></div>
@@ -58,7 +102,7 @@
       const data = await response.json();
 
       if (data.data.length === 0) {
-        cardContainer.innerHTML = `<div class="col-12"><p>No results found for "${searchTerm}".</p></div>`;
+        cardContainer.innerHTML = `<div class="col-12 text-center"><p>No results found for "${searchTerm}".</p></div>`;
         return;
       }
 
@@ -74,7 +118,8 @@
               <div class="character-films">Films: ${character.films.join(', ')}</div>
             </div>
           </a>
-        </div>` }
+        </div>`;
+    }
 
     function searchCharacter() {
       var searchTerm = document.getElementById("searchTerm").value;
