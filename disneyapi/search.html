@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Disney Search</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      font-style: normal;
+      background: linear-gradient(to right, #e6e1f5 0%, #e6e1f5 25%, #a09be7 100%);
+    }
+
+    .container {
+      max-width: 100%;
+    }
+
+    .card {
+      padding: 20px;
+      text-align: center;
+      max-width: 300px;
+      margin: 10px auto;
+    }
+
+    .imgcontainer {
+      background-color: #D9D9D9;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .imgcontainer img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .character-name {
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .btn {
+      background-color: #5a189a !important;
+      color: white !important;
+      border-color: #5a189a !important;
+    }
+
+    /* Responsive centering */
+    @media (max-width: 768px) {
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar" style="background: linear-gradient(to right, #e6e1f5 0%, #e6e1f5 25%, #a09be7 100%);">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <img src="disney-gold.png" width="100" height="50" class="d-inline-block align-text-top">
+      </a>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row mt-2 text-center">
+      <div class="col fs-1">
+        <span style="font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-style: normal; color: #fffafadb;
+        text-shadow:0 0 10px #6d249799">Search for Characters</span>
+      </div>
+    </div>
+    <div class="row mt-2 justify-content-center">
+      <div class="col-8 col-md-6 col-lg-4">
+        <input class="form-control" type="text" placeholder="Character Name // e.g., Apollo" id="searchTerm">
+      </div>
+      <div class="col-4 col-md-2 col-lg-1">
+        <button class="btn btn-primary w-100" type="button" onclick="searchCharacter()">Search</button>
+      </div>
+    </div>
+    <div class="row mt-3" id="cardContainer"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
+  <script>
+    var cardContainer = document.getElementById("cardContainer");
+
+    const loadCharacter = async (searchTerm) => {
+      const response = await fetch(`https://api.disneyapi.dev/character?name=${searchTerm}`);
+      const data = await response.json();
+
+      if (data.data.length === 0) {
+        cardContainer.innerHTML = `<div class="col-12 text-center"><p>No results found for "${searchTerm}".</p></div>`;
+        return;
+      }
+
+      const character = data.data[0];
+      cardContainer.innerHTML = `
+        <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+          <a href="view.html?characterName=${character.name}">
+            <div class="card rounded-5 my-3" style="background-color: #F8F9FA">
+              <div class="imgcontainer">
+                <img src="${character.imageUrl}" alt="${character.name}">
+              </div>
+              <div class="character-name">${character.name}</div>
+              <div class="character-films">Films: ${character.films.join(', ')}</div>
+            </div>
+          </a>
+        </div>`;
+    }
+
+    function searchCharacter() {
+      var searchTerm = document.getElementById("searchTerm").value;
+      loadCharacter(searchTerm);
+    }
+  </script>
+</body>
+
+</html>
