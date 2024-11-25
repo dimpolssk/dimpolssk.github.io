@@ -24,7 +24,7 @@
                     <li class="nav-item"><a class="nav-link" href="#landingpage">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#aboutPage">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#toolkitPage">Toolkit</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projectPage">Projects</a></li>
                 </ul>
             </div>
         </nav>
@@ -41,39 +41,33 @@
                 <h1 class="animate__animated animate__slideInDown">Khate Dimple<br>Aguilar Boncodin</h1>
             </div>
         </div>
-        <div class="keyart_layer parallax" id="keyart-1" data-speed="5"></div>
+        <div class="keyart_layer parallax" id="keyart-1" data-speed="11"></div>
 
 
     </div>
     </div>
 
     <div class="container-fluid py-2 start position-relative top-0 start-0 flex-column justify-content-center justify-text"
-        id="aboutPage">
-        <img src="star.svg" id="star-pulse">
-        <img src="star2.svg" id="star-pulse-2">
-        <img src="shooting-star2.svg" id="star-bot-l">
-        <div class="justify-text">
-            <h1 class="text-start"><strong><em><span style="color: #cbe7ff;">First,</span> about me</em></strong></h1>
-            <h3 style="font-family: Lexend Deca;">As a driven 21-year-old 4th year student, I'm passionate about web
-                development and eager to apply my
-                skills to real-world challenges. Take a look at my <a href="#projects"><label
-                        style="text-decoration:underline; color: #cbe7ff;">projects</label></a>, I'm ready to dive in
-                and contribute to
-                your team's success. I'm excited to learn from experienced professionals and grow alongside your team.
-            </h3>
-        </div>
+    id="aboutPage">
+    <img src="star.svg" id="star-pulse">
+    <img src="star2.svg" id="star-pulse-2">
+    <img src="shooting-star2.svg" id="star-bot-l">
+    <div class="justify-text">
+        <h1 class="text-start" id="abt-heading"><strong><em><span style="color: #cbe7ff;">First,</span> about me</em></strong></h1>
+        <h3 style="font-family: Lexend Deca;" id="abt-desc">
+            As a driven 21-year-old 4th year student, I'm passionate about web development and eager to apply my skills to real-world challenges. Take a look at my <a href="#projects"><label style="text-decoration:underline; color: #cbe7ff;">projects</label></a>, I'm ready to dive in and contribute to your team's success. I'm excited to learn from experienced professionals and grow alongside your team.
+        </h3>
     </div>
-    </div>
-    </div>
+</div>
 
     <div class="toolkit" id="toolkitPage">
-        <h1 class="text-start ">
+        <h1 class="text-start" id="toolkit-heading">
             <strong><em><span style="color: #cbe7ff;">Second,</span> toolkits I use</em></strong>
         </h1>
-        <figcaption class="blockquote-footer ms-1">
+        <figcaption class="blockquote-footer ms-1" id="toolkit-heading">
             for <cite title="Source Title"><span style="color: #cbe7ff;"> Web Development</span></cite>
         </figcaption>
-        <div class="container">
+        <div class="container" id="toolkitImgs">
             <div class="row text-center pt-5 ">
                 <div class="row">
                     <div class="col-6 col-md-4"><img
@@ -100,7 +94,7 @@
             <!-- Section Title -->
             <div class="row">
                 <div class="col-12">
-                    <h1 class="text-start">
+                    <h1 class="text-start" id="project-heading">
                         <strong>
                             <em><span style="color: #cbe7ff;">Third,</span> my projects</em>
                         </strong>
@@ -109,7 +103,7 @@
             </div>
 
             <!-- Cards Section -->
-            <div class="row">
+            <div class="row" id="project-cards">
                 <!-- Card 1 -->
                 <div class="col-md-6">
                     <div class="card m-3">
@@ -176,56 +170,110 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script>
-        function castParallax() {
+function castParallax() {
 
-            var opThresh = 350;
-            var opFactor = 750;
+var opThresh = 350;
+var opFactor = 750;
 
-            window.addEventListener("scroll", function (event) {
-                var top = this.pageYOffset;
+window.addEventListener("scroll", function (event) {
+  var top = this.pageYOffset;
 
-                var layers = document.getElementsByClassName("parallax");
-                var layer, speed, yPos;
-                for (var i = 0; i < layers.length; i++) {
-                    layer = layers[i];
-                    speed = layer.getAttribute('data-speed');
-                    var yPos = -(top * speed / 100);
-                    layer.setAttribute('style', 'transform: translate3d(0px, ' + yPos + 'px, 0px)');
-                }
-            });
+  var layers = document.getElementsByClassName("parallax");
+  var layer, speed, yPos;
+  for (var i = 0; i < layers.length; i++) {
+    layer = layers[i];
+    speed = layer.getAttribute('data-speed');
+    var yPos = -(top * speed / 100);
+    layer.setAttribute('style', 'transform: translate3d(0px, ' + yPos + 'px, 0px)');
+  }
+});
+}
+
+function dispelParallax() {
+$("#nonparallax").css('display', 'block');
+$("#parallax").css('display', 'none');
+}
+
+function castSmoothScroll() {
+$.srSmoothscroll({
+  step: 80,
+  speed: 300,
+  ease: 'linear'
+});
+}
+
+function startSite() {
+var platform = navigator.platform.toLowerCase();
+var userAgent = navigator.userAgent.toLowerCase();
+
+if (platform.indexOf('ipad') != -1 || platform.indexOf('iphone') != -1) {
+  dispelParallax();
+} else if (platform.indexOf('win32') != -1 || platform.indexOf('linux') != -1) {
+  castParallax();
+  if ($.browser.webkit) {
+    castSmoothScroll();
+  }
+} else {
+  castParallax();
+}
+}
+
+document.body.onload = startSite();
+        document.addEventListener("DOMContentLoaded", function () {
+    const sections = [
+        {
+            section: document.querySelector("#aboutPage"),
+            heading: "#abt-heading",
+            description: "#abt-desc",
+        },
+        {
+            section: document.querySelector("#toolkitPage"),
+            heading: "#toolkit-heading",
+            description: null,
+            blockquote: "figcaption.blockquote-footer",
+            images: "#toolkitImgs",
+        },
+        {
+        section: document.querySelector("#projectPage"),
+        heading: "#project-heading",
+        description: "#project-cards"
         }
+    ];
 
-        function dispelParallax() {
-            $("#nonparallax").css('display', 'block');
-            $("#parallax").css('display', 'none');
-        }
+    const observerOptions = {
+        root: null, 
+        rootMargin: "0px",
+        threshold: 0.5,
+    };
 
-        function castSmoothScroll() {
-            $.srSmoothscroll({
-                step: 80,
-                speed: 300,
-                ease: 'linear'
-            });
-        }
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                const targetSection = sections.find((sec) => sec.section === entry.target);
 
-        function startSite() {
-            var platform = navigator.platform.toLowerCase();
-            var userAgent = navigator.userAgent.toLowerCase();
+                const heading = document.querySelector(targetSection.heading);
+                const description = targetSection.description
+                    ? document.querySelector(targetSection.description)
+                    : null;
+                const blockquote = targetSection.blockquote
+                    ? document.querySelector(targetSection.blockquote)
+                    : null;
+                const images = targetSection.images
+                    ? document.querySelector(targetSection.images)
+                    : null;
 
-            if (platform.indexOf('ipad') != -1 || platform.indexOf('iphone') != -1) {
-                dispelParallax();
-            } else if (platform.indexOf('win32') != -1 || platform.indexOf('linux') != -1) {
-                castParallax();
-                if ($.browser.webkit) {
-                    castSmoothScroll();
-                }
-            } else {
-                castParallax();
+                if (heading) heading.classList.add("animate__animated", "animate__fadeIn");
+                if (description) description.classList.add("animate__animated", "animate__slideInDown");
+                if (blockquote) blockquote.classList.add("animate__animated", "animate__fadeIn");
+                if (images) images.classList.add("animate__animated", "animate__slideInUp");
+
+                observer.unobserve(entry.target); 
             }
-        }
+        });
+    }, observerOptions);
 
-        document.body.onload = startSite();
-
+    sections.forEach((sec) => observer.observe(sec.section));
+});
     </script>
 
 </body>
