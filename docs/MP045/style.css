@@ -3,6 +3,7 @@ html {
     margin: 0;
     padding: 0;
     height: 100%;
+
 }
 
 nav {
@@ -13,7 +14,7 @@ nav {
     width: 100%;
     padding: 15px 20px;
     z-index: 10;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color:rgb(12, 11, 11);
     backdrop-filter: blur(15px);
 }
 
@@ -24,76 +25,76 @@ nav {
 }
 
 .nav-link img {
-    width: 30px;
-    height: 30px;
+    width: 100px;
+    height: 100px;
 }
 
 #landingpage {
     height: 100vh;
-    background-image: url('https://www.soup.io/wp-content/uploads/2024/05/NCT-127.jpeg');
+    background-image: url('https://time-holic.com/wp-content/uploads/2021/09/NCT-4.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 0;
+    justify-content: center; 
+    align-items: center; 
     position: relative;
+    gap: 20px;
+    border: 50px solid rgb(12, 11, 11);
 }
+
 
 .container-fluid {
     height: 100vh;
-    background: rgb(153, 198, 92);
-    background: linear-gradient(90deg, rgba(153, 198, 92, 1) 7%, rgba(10, 43, 15, 1) 35%, rgba(10, 43, 15, 1) 68%, rgba(61, 122, 64, 1) 100%);
-}
+    background: rgb(147,197,79);
+    background: radial-gradient(circle, rgba(147,197,79,1) 0%, rgba(30,40,14,1) 50%, rgba(151,196,78,1) 100%);}
 
 .subimg {
     height: 100vh;
     overflow: hidden;
-    margin-top: 20px;
     position: absolute;
-    top: 70%;
+    margin-top: 5.5%;
+    top: 60%;
     left: 50%;
     transform: translateX(-50%);
     z-index: 10;
-
 }
 
 .aboutPage {
     height: 100vh;
+    top: 90%; 
+    left: 50%;
+    z-index: 10;
+    height: auto;
+    max-height: 100vh;
+}
 
+.column {
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    text-align: center; 
+    height: 100vh; 
+    line-height: 100vh; 
 }
 
 .vertical-line {
-    border-left: 2px solid rgb(51, 58, 51); 
+    position: relative;
+    border-left: 2px solid rgb(74, 195, 74); 
     height: 20%;
-    position: absolute;
-    left: 50%; 
-    top: 60%; 
-    transform: translateX(-50%); 
+    width: 2px; 
+    margin: 0 auto;
+    top: 30%; 
 }
 
 .subimg2 {
-    position: absolute;
-    top: 90%; 
+    position: relative;
+    margin-top: 80px; 
     left: 50%;
     transform: translateX(-50%);
     z-index: 10;
     height: auto;
-    max-height: 100vh;
 }
 
-/*
-
-.subimg2 {
-    position: absolute;
-    top: 70%;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10;
-    height: auto;
-    max-height: 100vh;
-} 
-*/
 
 @media (max-width: 768px) {
     .nav-link img {
@@ -112,5 +113,69 @@ nav {
     .descrip-127 {
         font-size: 16px;
         padding: 0 15px;
+    }
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+nav {
+    font-family: 'Lexend Deca', sans-serif;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 20px;
+    z-index: 10;
+    background-color: rgb(12, 11, 11);
+    backdrop-filter: blur(15px);
+}
+
+.nav-link img {
+    width: 80px;
+    height: auto;
+}
+
+#landingpage {
+    height: 100vh;
+    background-image: url('https://time-holic.com/wp-content/uploads/2021/09/NCT-4.jpg');
+    background-size: cover;
+    background-position: center;
+    border: 50px solid rgb(12, 11, 11);
+}
+
+.container-fluid {
+    background: rgb(50, 63, 32);
+    background: radial-gradient(circle, rgba(50, 63, 32, 1) 0%, rgba(76, 120, 3, 1) 50%, rgba(22, 22, 20, 1) 100%);
+}
+
+.descrip-127 {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.vertical-line {
+    border-left: 2px solid rgb(74, 195, 74);
+    height: 50px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .nav-link img {
+        width: 50px;
+    }
+
+    .descrip-127 {
+        font-size: 0.9rem;
+        padding: 15px;
+    }
+
+    iframe {
+        width: 100%;
+        height: 200px;
     }
 }

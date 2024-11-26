@@ -13,10 +13,10 @@
 <body>
     <nav class="navbar">
         <div class="container">
-            <div class="row w-100">
+            <div class="row w-100 align-items-center">
                 <div class="col-4 d-flex justify-content-start">
                     <a class="nav-link" href="">
-                        <img src="menu.png" alt="Menu" class="img-fluid">
+                        <img src="menu.png" alt="Menu" class="m-3 img-fluid">
                     </a>
                 </div>
                 <div class="col-4 d-flex justify-content-center">
@@ -24,43 +24,45 @@
                         <img src="nct-logo.png" alt="NCT Logo" class="img-fluid">
                     </a>
                 </div>
-                <div class="col-4 d-flex justify-content-end">
-                    <a class="nav-link" href="#projectPage">
-                        <img src="location-icon.png" alt="Location" class="img-fluid">
-                    </a>
-                </div>
             </div>
         </div>
     </nav>
 
-    <div id="landingpage">
+    <div id="landingpage"></div>
+
+    <div class="container-fluid text-center">
+        <div class="row py-5">
+            <div class="col-12">
+                <iframe width="560" height="315" class="embed-responsive-item" 
+                        src="https://www.youtube.com/embed/rPtMMJmO24w?rel=0&controls=1" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div id="aboutPage" class="row">
+            <div class="col-12">
+                <p class="descrip-127 text-light mx-auto ">
+                    NCT's second unit, NCT 127. NCT 127 is based in Seoul, with the number 127 <br>
+                    representing the longitude coordinates of Seoul. The unit consists of eight members: <br> Taeyong,
+                    Yuta, Jaehyun, Winwin, Mark, Haechan, and later added Johnny, Doyoung, and Jungwoo.
+                </p>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-12 vertical-line"></div>
+            <div class="col-12 mt-4">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d202404.9141681677!2d126.80933050935023!3d37.56503371456283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca28b61c565cd%3A0x858aedb4e4ea83eb!2sSeoul%2C%20South%20Korea!5e0!3m2!1sen!2sph!4v1732614649346!5m2!1sen!2sph"
+                    width="200" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
     </div>
 
-    <div class="aboutPage">
-        <div class="container-fluid" style="background: rgb(40,98,8); background: radial-gradient(circle, rgba(40,98,8,1) 0%, rgba(231,194,50,0.8842130602240896) 100%);">
-          
-         <div class="subimg pt-4 shadow p-3">
-            <p class="descrip-127 z-3 col-12 position-absolute d-flex text-center justify-content-center pt-5 mt-5 text-light">
-                NCT's second
-                unit, NCT
-                127. NCT 127 is based in Seoul, with the
-                number 127 <br>
-                representing the longitude coordinates of Seoul. The unit consists of eight members: <br> Taeyong, Yuta,
-                Jaehyun,
-                Winwin, Mark, Haechan and later added Johnny, Doyoung, and Jungwoo.</p>
-    
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/rPtMMJmO24w?rel=0&controls=1" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-                </iframe>
-                <div class="vertical-line pt-5 mt-5"></div>
-                 <!-- <div class="subimg2  pt-5">
-                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/7f4ignuCJhLXfZ9giKT7rH?utm_source=generator"
-                        width="100%" height="552" frameBorder="0" allowfullscreen=""
-                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-        </div>--> 
-        <script src="https://open.spotify.com/embed/iframe-api/v1" async></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

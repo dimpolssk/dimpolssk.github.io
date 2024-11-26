@@ -95,8 +95,6 @@ body {
     filter: invert(1);
 }
 
-
-
 .collapse {
     border-radius: 5px;
     padding: 10px;
@@ -184,8 +182,7 @@ body {
     }
 }
 
-/* Responsive Adjustments */
-@media (max-width: 1200px) { /* Large screens (below 1200px) */
+@media (max-width: 1200px) { 
     #pfp {
         width: 300px;
         height: 450px;
@@ -193,7 +190,7 @@ body {
     }
 }
 
-@media (max-width: 768px) { /* Medium screens (below 768px) */
+@media (max-width: 768px) { 
     #pfp {
         width: 250px;
         height: 375px;
@@ -201,7 +198,7 @@ body {
     }
 }
 
-@media (max-width: 576px) { /* Small screens (below 576px) */
+@media (max-width: 576px) { 
     #pfp {
         width: 200px;
         height: 300px;
@@ -343,7 +340,7 @@ h3 {
 
 
 .toolkit {
-    height: 80%; 
+    height: 90%; 
     padding: 40px 5%;
     background-image: url('bg-2.png');
     background-color: black;
@@ -369,7 +366,7 @@ h3 {
 
 .toolkit img {
     width: 100px;
-    height: auto;
+    height: 100px;
     object-fit: contain;
     margin: 10px auto;
     filter: drop-shadow(0 4px 6px rgba(255, 255, 255, 0.894));
@@ -397,7 +394,7 @@ h3 {
 
 #projectPage {
     position: relative;
-    height: 80%;
+    height: 100%;
     overflow: hidden;
     background-image: url('bg-3.png');
     background-color: black;
@@ -408,6 +405,41 @@ h3 {
     padding: 0 5%;
     text-align: justify;
     z-index: 11;
+}
+
+.card {
+    background: transparent; 
+    border: 1px solid #6b9adf;
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card .card-title {
+    color:  #6b9adf;
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+.card .card-text {
+    color: #ffffff; 
+    font-size: 1rem;
+}
+
+.card .btn {
+    background-color:  #0056b3; 
+    color: white; 
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.card .btn:hover {
+    background-color: #007bff; 
 }
 
 .footerPage{
