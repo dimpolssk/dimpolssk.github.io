@@ -1,13 +1,116 @@
-.homePage {
-    position: relative;
-    height: 100vh;
-    overflow: hidden;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: rgb(7, 7, 12);
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+nav {
+    font-family: 'Lexend Deca', sans-serif;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 20px;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+}
+
+.navbar .container {
     display: flex;
     align-items: center;
-    padding: 0 5%;
-    background-image: url(https://www.soup.io/wp-content/uploads/2024/05/NCT-127.jpeg);
+    justify-content: space-between;
+}
+
+.nav-link img {
+    width: 30px;
+    height: 30px;
+}
+
+#landingpage {
+    height: 100vh;
+    background-image: url('https://www.soup.io/wp-content/uploads/2024/05/NCT-127.jpeg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    position: relative;
+}
+
+.container-fluid {
+    height: 100vh;
+    background: rgb(153, 198, 92);
+    background: linear-gradient(90deg, rgba(153, 198, 92, 1) 7%, rgba(10, 43, 15, 1) 35%, rgba(10, 43, 15, 1) 68%, rgba(61, 122, 64, 1) 100%);
+}
+
+.subimg {
+    height: 100vh;
+    overflow: hidden;
+    margin-top: 20px;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+
+}
+
+.aboutPage {
+    height: 100vh;
+
+}
+
+.vertical-line {
+    border-left: 2px solid rgb(51, 58, 51); 
+    height: 20%;
+    position: absolute;
+    left: 50%; 
+    top: 60%; 
+    transform: translateX(-50%); 
+}
+
+.subimg2 {
+    position: absolute;
+    top: 90%; 
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    height: auto;
+    max-height: 100vh;
+}
+
+/*
+
+.subimg2 {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    height: auto;
+    max-height: 100vh;
+} 
+*/
+
+@media (max-width: 768px) {
+    .nav-link img {
+        max-width: 25px;
+    }
+
+    .subimg iframe {
+        max-width: 100%;
+        height: 250px;
+    }
+
+    .subimg2 iframe {
+        height: 350px;
+    }
+
+    .descrip-127 {
+        font-size: 16px;
+        padding: 0 15px;
+    }
 }
