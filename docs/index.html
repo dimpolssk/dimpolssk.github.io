@@ -17,32 +17,25 @@
 </head>
 
 <body>
-    <div class="container-fluid" id="landingpage">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav" >
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                        <li class="nav-item"><a class="nav-link" href="#landingpage">Home</a></li>
-                        </li>
-                        <li class="nav-item">
-                        <li class="nav-item"><a class="nav-link" href="#aboutPage">About</a></li>
-                        </li>
-                        <li class="nav-item">
-                        <li class="nav-item"><a class="nav-link" href="#toolkitPage">Toolkit</a></li>
-                        </li>
-                        <li class="nav-item">
-                        <li class="nav-item"><a class="nav-link" href="#projectPage">Projects</a></li>
-                        </li>
-                    </ul>
-                </div>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#landingpage">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#aboutPage">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#toolkitPage">Toolkit</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projectPage">Projects</a></li>
+                </ul>
             </div>
-        </nav>
-        <img src="shooting-star.svg" id="star-top-r">
+        </div>
+    </nav>
+        <div class="container-fluid" id="landingpage">
+
+                <img src="shooting-star.svg" id="star-top-r">
         <img src="star.svg" id="star-pulse">
         <img src="star2.svg" id="star-pulse-2">
         <div class="row w-100">
@@ -90,10 +83,10 @@
             <div class="row text-center pt-5 ">
                 <div class="row">
                     <div class="col-6 col-md-4"><img
-                            src="https://static.vecteezy.com/system/resources/previews/027/127/463/non_2x/javascript-logo-javascript-icon-transparent-free-png.png"
+                            class="rounded-4" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM3Pai4aCoH5d9rz6uwIOyKwjcRwy2HuyC7g&s"
                             alt="Web Development"></div>
-                    <div class="col-6 col-md-4"><img src="html-logo.png" alt="HTML5"></div>
-                    <div class="col-6 col-md-4"><img src="css-logo.png" alt="CSS3">
+                    <div class="col-6 col-md-4"><img src="https://cdn-icons-png.flaticon.com/512/3291/3291670.png" alt="HTML5"></div>
+                    <div class=" col-6 col-md-4 "><img class="rounded-4" src="css-logo.png" alt="CSS3">
                     </div>
                 </div>
 
@@ -121,9 +114,7 @@
                 </div>
             </div>
 
-            <!-- Cards Section -->
             <div class="row" id="project-cards">
-                <!-- Card 1 -->
                 <div class="col-md-6">
                     <div class="card m-3">
                         <div class="card-body">
@@ -134,11 +125,11 @@
                                 Using your creative skills, create a tri-fold A4 brochure that showcases the system's
                                 attributes, properties, and characteristics.
                             </p>
-                            <a href="act02/index.html" class="btn btn-primary">OPEN</a>
+                            <a href="https://www.canva.com/design/DAGSaHeWPXI/Y3h-IccEYwK-RO62tN6ONA/edit"
+                                class="btn btn-primary">OPEN</a>
                         </div>
                     </div>
                 </div>
-                <!-- Card 2 -->
                 <div class="col-md-6">
                     <div class="card m-3">
                         <div class="card-body">
@@ -149,11 +140,10 @@
                                 Create a section of your homepage containing buttons/panels dedicated to your activities
                                 in this course. Transfer your activity 2 into a folder within and connect it to one of
                                 the buttons/panels. </p>
-                            <a href="act02/index.html" class="btn btn-primary">OPEN</a>
+                            <a href="#projectPage" class="btn btn-primary">OPEN</a>
                         </div>
                     </div>
                 </div>
-                <!-- Card 3 -->
                 <div class="col-md-6">
                     <div class="card m-3">
                         <div class="card-body">
@@ -167,7 +157,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- Card 4 -->
                 <div class="col-md-6">
                     <div class="card m-3">
                         <div class="card-body">
@@ -183,9 +172,28 @@
             </div>
         </div>
     </div>
-    <footer class="footerPage">
-
-    </footer>
+    <div class="footer-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 text-center text-lg-left">
+                    <div class="copyright-text">
+                        <p>Khate Midterms <a href="https://codepen.io/anupkumar92/">404</a></p>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
+                    <div class="footer-menu">
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Toolkit</a></li>
+                            <li><a href="#">Projects</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script>
