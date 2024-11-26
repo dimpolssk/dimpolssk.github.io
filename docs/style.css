@@ -74,66 +74,69 @@ body {
     left: 0;
 }
 
-nav {
-    font-family: Lexend Deca;
+.navbar {
+    font-family: 'Lexend Deca', sans-serif;
     position: absolute;
     top: 0;
     width: 100%;
     z-index: 10;
+    background-color: transparent !important;
 }
 
-.navbar-custom {
-    display: inline-block;
-    margin: 0 auto;
+.navbar-toggler {
+    border: none; 
+    outline: none;
 }
 
-.navbar-nav-custom .nav-item {
+.navbar-toggler .navbar-toggler-icon {
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath stroke="rgba%280, 0, 0, 0.5%29" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E') !important; 
+    width: 24px;
+    height: 24px;
+    filter: invert(1);
+}
+
+.collapse {
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.navbar .navbar-nav .nav-link {
+    color: white !important;
+    padding: 10px 15px;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-align: center;
+}
+
+.navbar .navbar-nav .nav-link:hover {
+    color: #cbe7ff !important;
+}
+
+.navbar .navbar-nav .nav-item {
     display: inline-block;
     margin: 0 10px;
 }
 
-.navbar-nav-custom .nav-link {
-    color: white;
-    font-family: Outfit, sans-serif;
+.navbar .navbar-nav .nav-link {
+    color: white !important;
+    font-family: 'Outfit', sans-serif;
     text-transform: uppercase;
-    text-decoration: none;
+    text-decoration: none !important; 
     font-weight: 600;
     transition: color 0.3s ease;
     padding: 0 10px;
 }
 
-.navbar-nav-custom .nav-link:hover {
-    color: #cbe7ff;
-    text-decoration: underline;
+.navbar .navbar-nav .nav-link:hover {
+    color: #cbe7ff !important;
+    text-decoration: underline !important;
 }
 
-.navbar-nav-custom {
-    list-style: none;
-    padding: 0;
+.navbar .navbar-nav {
+    list-style: none !important;
     margin: 0;
-    display: inline-flex;
+    display: inline-flex !important;
     align-items: center;
-}
-
-.navbar-nav-custom .nav-item {
-    display: inline-block;
-}
-
-.navbar-nav-custom .nav-link {
-    color: white;
-    font-family: Outfit, sans-serif;
-    text-transform: uppercase;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s ease;
-    display: inline-block;
-}
-
-.navbar-nav-custom .nav-item:not(:last-child)::after {
-    content: " |";
-    color: white;
-    margin-left: 5px;
-    display: inline-block;
 }
 
 #pfp {
