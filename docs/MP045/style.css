@@ -1,122 +1,5 @@
-body,
-html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-
-}
-
-nav {
-    font-family: 'Lexend Deca', sans-serif;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 15px 20px;
-    z-index: 10;
-    background-color:rgb(12, 11, 11);
-    backdrop-filter: blur(15px);
-}
-
-.navbar .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.nav-link img {
-    width: 100px;
-    height: 100px;
-}
-
-#landingpage {
-    height: 100vh;
-    background-image: url('https://time-holic.com/wp-content/uploads/2021/09/NCT-4.jpg');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-    position: relative;
-    gap: 20px;
-    border: 50px solid rgb(12, 11, 11);
-}
-
-
-.container-fluid {
-    height: 100vh;
-    background: rgb(147,197,79);
-    background: radial-gradient(circle, rgba(147,197,79,1) 0%, rgba(30,40,14,1) 50%, rgba(151,196,78,1) 100%);}
-
-.subimg {
-    height: 100vh;
-    overflow: hidden;
-    position: absolute;
-    margin-top: 5.5%;
-    top: 60%;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10;
-}
-
-.aboutPage {
-    height: 100vh;
-    top: 90%; 
-    left: 50%;
-    z-index: 10;
-    height: auto;
-    max-height: 100vh;
-}
-
-.column {
-    flex-direction: column; 
-    align-items: center; 
-    justify-content: center; 
-    text-align: center; 
-    height: 100vh; 
-    line-height: 100vh; 
-}
-
-.vertical-line {
-    position: relative;
-    border-left: 2px solid rgb(74, 195, 74); 
-    height: 20%;
-    width: 2px; 
-    margin: 0 auto;
-    top: 30%; 
-}
-
-.subimg2 {
-    position: relative;
-    margin-top: 80px; 
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10;
-    height: auto;
-}
-
-
-@media (max-width: 768px) {
-    .nav-link img {
-        max-width: 25px;
-    }
-
-    .subimg iframe {
-        max-width: 100%;
-        height: 250px;
-    }
-
-    .subimg2 iframe {
-        height: 350px;
-    }
-
-    .descrip-127 {
-        font-size: 16px;
-        padding: 0 15px;
-    }
-}
-
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
     height: 100%;
@@ -134,6 +17,12 @@ nav {
     backdrop-filter: blur(15px);
 }
 
+.navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .nav-link img {
     width: 80px;
     height: auto;
@@ -144,38 +33,69 @@ nav {
     background-image: url('https://time-holic.com/wp-content/uploads/2021/09/NCT-4.jpg');
     background-size: cover;
     background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    gap: 20px;
     border: 50px solid rgb(12, 11, 11);
 }
 
+.subimg {
+    height: 100vh;
+    overflow: hidden;
+    position: absolute;
+    margin-top: 10px;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+
+.aboutPage {
+    height: 100vh;
+    top: 90%;
+    left: 50%;
+    z-index: 10;
+    height: auto;
+    max-height: 100vh;
+}
+
+.column {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+    line-height: 100vh;
+}
+
 .container-fluid {
-    background: rgb(50, 63, 32);
-    background: radial-gradient(circle, rgba(50, 63, 32, 1) 0%, rgba(76, 120, 3, 1) 50%, rgba(22, 22, 20, 1) 100%);
+    height: 100vh;
+    background: rgb(105,161,28);
+    background: radial-gradient(circle, rgba(105,161,28,1) 0%, rgba(35,44,21,1) 100%);
 }
 
 .descrip-127 {
     font-size: 1.2rem;
-    max-width: 600px;
     margin: 0 auto;
 }
 
 .vertical-line {
+    position: relative;
+    width: 2px;
     border-left: 2px solid rgb(74, 195, 74);
     height: 50px;
     margin: 0 auto;
 }
 
-@media (max-width: 768px) {
-    .nav-link img {
-        width: 50px;
-    }
-
-    .descrip-127 {
-        font-size: 0.9rem;
-        padding: 15px;
-    }
-
-    iframe {
-        width: 100%;
-        height: 200px;
-    }
+.subimg2 {
+    position: relative;
+    margin-top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    height: auto;
 }
+
