@@ -1,3 +1,4 @@
+
 html,
 body {
     margin: 0;
@@ -28,7 +29,7 @@ nav {
 }
 
 #landingpage {
-    height: 100vh;
+    height: 100%;
     background-image: url('https://time-holic.com/wp-content/uploads/2021/09/NCT-4.jpg');
     background-size: cover;
     background-position: center;
@@ -41,7 +42,7 @@ nav {
 }
 
 .subimg {
-    height: 100vh;
+    height: 100%;
     overflow: hidden;
     position: absolute;
     margin-top: 10px;
@@ -51,14 +52,20 @@ nav {
     z-index: 10;
 }
 
+iframe {
+    width: 100%;
+    max-width: 560px;
+    aspect-ratio: 4 / 3;
+}
+
 
 .aboutPage {
-    height: 100vh;
+    height: 100%;
     top: 90%;
     left: 50%;
     z-index: 10;
     height: auto;
-    max-height: 100vh;
+    max-height: 100%;
 }
 
 .column {
@@ -66,12 +73,12 @@ nav {
     align-items: center;
     justify-content: center;
     text-align: center;
-    height: 100vh;
-    line-height: 100vh;
+    height: 100%;
+    line-height: 100%;
 }
 
 .container-fluid {
-    height: 100vh;
+    height: 100%;
     background: rgb(105,161,28);
     background: radial-gradient(circle, rgba(105,161,28,1) 0%, rgba(35,44,21,1) 100%);
 }
